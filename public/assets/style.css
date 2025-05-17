@@ -278,8 +278,7 @@ body {
 }
 
 .mega {
-    max-width: 100% !important;
-    width: fit-content !important;
+    width: 100% !important; 
     left: 16px;
     right: 16px;
     flex-direction: initial;
@@ -293,8 +292,6 @@ body {
     max-height: 80vh;
     overflow-y: scroll;
     max-width: calc(100% - 30px);
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .fe-header .header-bottom a {
@@ -326,7 +323,7 @@ body {
     }
 
     .fe-header .header-bottom .sub-menu.sub-menu-list {
-        max-width: calc(70% - 30px);
+        /* max-width: calc(70% - 30px); */
     }
 }
 
