@@ -82,6 +82,14 @@ $(document).ready(function () {
     fade: true,
     autoplay: true,
     autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          dots: false,
+        },
+      },
+    ],
   });
 
   $(".products-slider").slick({
@@ -149,38 +157,38 @@ $(document).ready(function () {
         },
       },
     ],
-}); 
+  });
 
-$(".products-rate").slick({
-  dots: false,
-  arrows: true,
-  speed: 300,
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  autoplay: true,
-  infinite: false,
-  autoplaySpeed: 3000,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4,
+  $(".products-rate").slick({
+    dots: false,
+    arrows: true,
+    speed: 300,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    infinite: false,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
       },
-    },
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 3,
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        },
       },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
       },
-    },
-  ],
-});
+    ],
+  });
 
   $(".products-slider-two-row").slick({
     dots: false,
@@ -188,7 +196,7 @@ $(".products-rate").slick({
     infinite: false,
     speed: 300,
     slidesToShow: 5,
-    rows:2,
+    rows: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -242,7 +250,7 @@ $(".products-rate").slick({
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 4 ,
+          slidesToShow: 4,
           slidesToScroll: 4,
         },
       }
@@ -302,7 +310,7 @@ $(".products-rate").slick({
       }
     ],
   });
-  
+
   $(".slick-category-6-2").slick({
     dots: false,
     arrows: false,
@@ -323,7 +331,7 @@ $(".products-rate").slick({
       }
     ],
   });
-  
+
   $(".slide-video").slick({
     dots: false,
     arrows: true,
@@ -388,31 +396,38 @@ $(".products-rate").slick({
     }
   }, 1000);
 
-  $(window).on('scroll resize', function() {
+  $(window).on('scroll resize', function () {
     var scrollTop = $(this).scrollTop();
     var windowWidth = $(window).width();
 
     if (windowWidth >= 768) { // Chỉ áp dụng cho tablet trở lên
-        if (scrollTop > 35) {
-            $('#header-main').css({
-                'padding-top': '0.4rem',
-                'padding-bottom': '0.4rem'
-            });
-        } else {
-            $('#header-main').css({
-                'padding-top': '1rem',
-                'padding-bottom': '1rem'
-            });
-        }
+      if (scrollTop > 35) {
+        $('#header-main').css({
+          'padding-top': '0.4rem',
+          'padding-bottom': '0.4rem'
+        });
+      } else {
+        $('#header-main').css({
+          'padding-top': '1rem',
+          'padding-bottom': '1rem'
+        });
+      }
     }
-});
+  });
 
-$('.popup-youtube, .popup-vimeo').magnificPopup({
-  disableOn: 700,
-  type: 'iframe',
-  mainClass: 'mfp-fade',
-  removalDelay: 160,
-  preloader: false,
-  fixedContentPos: false
-});
+  $('.popup-youtube, .popup-vimeo').magnificPopup({
+    disableOn: 700,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: false
+  });
+
+  $('.btn-search').click(function() {
+    $(this).toggleClass('active');  // Toggle 'active' class on btn-search
+    $('.header-search').toggleClass('active');  // Toggle 'active' class on header-search
+  });
+  
+
 });
